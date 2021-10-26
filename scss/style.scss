@@ -1,0 +1,103 @@
+/** DEF **/
+$time: .3s;
+
+@font-face {
+	font-family: 'Metric';
+	src: url('/fonts/Metric/MetricWeb-Regular.ttf') format('truetype'),
+		url('/fonts/Metric/MetricWeb-Regular.woff') format('woff')
+		url('/fonts/Metric/MetricWeb-Regular.woff2') format('woff2')
+		url('/fonts/Metric/MetricWeb-Regular.eot') format('embedded-opentype')
+		url('/fonts/Metric/MetricWeb-Regular.svg') format('svg');
+}
+
+:root {
+	--font-metric: 'Metric', sans-serif;
+
+	--color-white : #fff;
+	--color-yellow: #ddc117;
+	--color-grey  : #c3c4c7;
+	--color-dark  : #1a1a1a;
+	--color-black : #000;
+
+	--transition-duration: $time;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	line-height: 1.6;
+	font-family: var(--font-metric);
+	background: var(--color-dark);
+}
+
+* {
+	box-sizing: border-box;
+	font-weight: 300;
+}
+
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	@media all and (min-width:1200px) {
+		width: 1170px;
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.col-4 {
+	max-width: 33.3333%;
+	flex: 0 0 33.3333%;
+	padding: 0 15px;
+
+	@media all and (max-width:991px) {
+		max-width: 100%;
+		flex: 0 0 100%;
+	}
+}
+
+a {
+	color: var(--color-grey);
+	text-decoration: none;
+	transition: $time;
+}
+
+img {
+	max-width: 100%;
+}
+
+.ttu {
+	text-transform: uppercase;
+}
+
+.tac {
+	text-align: center;
+}
+
+.c-yellow {
+	color: var(--color-yellow);
+}
+
+.niteco-btn {
+	color: var(--color-white);
+	border: 2px solid var(--color-yellow);
+	background: var(--color-yellow);
+	text-align: center;
+	text-transform: uppercase;
+	transition: $time;
+
+	&:hover {
+		background: var(--color-black);
+	}
+}
+
+@import './header';
+@import './main';
+@import './footer';
